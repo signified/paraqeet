@@ -1,0 +1,21 @@
+{%- assign title = site.description | append: ' | ' | append: site.title -%}
+{%- if page.url != '/' -%}
+  {%- if page.title -%}
+    {%- assign title = page.title | append: ' | ' | append: site.title -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign title = title | escape -%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    {{ content }}
+    <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+title: Paraqeet
+description: A Jekyll theme for building websites with Bootstrap
+baseurl: "/paraqeet"
+url: "https://signified.github.io"
+
+exclude:
+  - LICENSE
+  - README.md
+  - paraqeet.gemspec
+
+sass:
+  style: :compressed

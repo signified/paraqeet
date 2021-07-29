@@ -1,0 +1,11 @@
+.highlight {
+  margin: 0 0 $spacer 0;
+  padding: map-get($spacers, 4);
+  * {
+    font-size: $font-size-sm
+  }
+  pre {
+    margin: 0;
+    padding: 0;
+  }
+}
