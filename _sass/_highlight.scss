@@ -1,18 +1,26 @@
-// highlight
 .highlight {
 
   * {
-    font-size: $font-size-base;
+    font-size: $font-size-sm;
   }
 
-  padding: $spacer;
+  margin: 0;
+  padding: 0;
   background-color: $light;
   border-radius: $border-radius;
 
   pre {
     margin: 0;
-    padding: 0;
+    padding: $spacer;
     color: $pre-color;
+  }
+
+  td {
+
+    pre {
+      padding: 0;
+    }
+
   }
 
   .lineno {
@@ -21,84 +29,131 @@
     color: $text-muted;
   }
 
-}
+  .hll {
+    background-color: $yellow-100;
+  }
 
-// base16
-.highlight, .highlight .w {
-  color: #303030;
-}
-.highlight .err {
-  color: #151515;
-  background-color: #ac4142;
-}
-.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
-  color: #505050;
-}
-.highlight .cp {
-  color: #f4bf75;
-}
-.highlight .nt {
-  color: #f4bf75;
-}
-.highlight .o, .highlight .ow {
-  color: #d0d0d0;
-}
-.highlight .p, .highlight .pi {
-  color: #d0d0d0;
-}
-.highlight .gi {
-  color: #90a959;
-}
-.highlight .gd {
-  color: #ac4142;
-}
-.highlight .gh {
-  color: #6a9fb5;
-  background-color: #151515;
-  font-weight: $font-weight-bold;
-}
-.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
-  color: #aa759f;
-}
-.highlight .kc {
-  color: #d28445;
-}
-.highlight .kt {
-  color: #d28445;
-}
-.highlight .kd {
-  color: #d28445;
-}
-.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
-  color: #90a959;
-}
-.highlight .sa {
-  color: #aa759f;
-}
-.highlight .sr {
-  color: #75b5aa;
-}
-.highlight .si {
-  color: #8f5536;
-}
-.highlight .se {
-  color: #8f5536;
-}
-.highlight .nn {
-  color: #f4bf75;
-}
-.highlight .nc {
-  color: #f4bf75;
-}
-.highlight .no {
-  color: #f4bf75;
-}
-.highlight .na {
-  color: #6a9fb5;
-}
-.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
-  color: #90a959;
-}
-.highlight .ss {
-  color: #90a959;
+  .dl,
+  .err,
+  .gd,
+  .gr,
+  .kt,
+  .ne,
+  .no,
+  .s,
+  .s1,
+  .s2,
+  .sa,
+  .sb,
+  .sc,
+  .sd,
+  .sh {
+    color: $red-400;
+  }
+
+  .fm,
+  .gh,
+  .gp,
+  .gt,
+  .nc,
+  .nf,
+  .nn,
+  .nv,
+  .ss,
+  .vc,
+  .vg,
+  .vi,
+  .vm {
+    color: $blue-400;
+  }
+
+  .bp,
+  .gi,
+  .k,
+  .kc,
+  .kd,
+  .kn,
+  .kp,
+  .kr,
+  .nb,
+  .nt,
+  .sx {
+    color: $green-400;
+  }
+
+  .go,
+  .il,
+  .m,
+  .mb,
+  .mf,
+  .mh,
+  .mi,
+  .mo,
+  .ni,
+  .o,
+  .w {
+    color: $gray-400;
+  }
+
+  .c,
+  .c1,
+  .ch,
+  .cm,
+  .cpf,
+  .cs {
+    color: $teal-400;
+  }
+
+  .cp,
+  .se {
+    color: $orange-400;
+  }
+
+  .nd,
+  .ow {
+    color: $purple-400;
+  }
+
+  .gu,
+  .si,
+  .sr {
+    color: $pink-400;
+  }
+
+  .na,
+  .nl {
+    color: $yellow-400;
+  }
+
+  .ne,
+  .gh,
+  .gp,
+  .nc,
+  .nn,
+  .k,
+  .kc,
+  .kd,
+  .kn,
+  .kr,
+  .nt,
+  .ni,
+  .se,
+  .ow,
+  .si,
+  .gu,
+  .gs {
+    font-weight: $font-weight-bold;
+  }
+
+  .sd,
+  .c,
+  .c1,
+  .ch,
+  .cm,
+  .cpf,
+  .cs,
+  .ge {
+    font-style: italic;
+  }
+
 }
