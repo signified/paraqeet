@@ -7,6 +7,3 @@ exclude:
   - LICENSE
   - README.md
   - paraqeet.gemspec
-
-sass:
-  style: :compressed

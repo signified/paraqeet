@@ -1,7 +1,8 @@
 {%- assign name = include.name | downcase -%}
 {%- assign type = 'font' -%}
-{%- assign width = 16 -%}
-{%- assign height = 16 -%}
+{%- assign size = 16 -%}
+{%- assign width = size -%}
+{%- assign height = size -%}
 {%- assign class = nil -%}
 {%- assign style = nil -%}
 
@@ -11,6 +12,11 @@
 
 {%- if include.type -%}
   {%- assign type = include.type | downcase -%}
+{%- endif -%}
+
+{%- if include.size -%}
+  {%- assign width = include.size -%}
+  {%- assign height = include.size -%}
 {%- endif -%}
 
 {%- if include.width -%}
@@ -27,7 +33,7 @@
       <i class="bi-{{- name -}}{% if include.class %} {{ include.class }}{% endif %}" role="img" aria-label="{{- title -}}"{% if include.style %} style="{{ include.style }}"{% endif %}></i>
     {%- endcapture -%}
   {%- when 'image' -%}
-    {%- assign image = '/assets/bootstrap-icons/' | append: name | append: '.svg' -%}
+    {%- assign image = '/assets/bootstrap-icons/icons/' | append: name | append: '.svg' -%}
     {%- capture icon -%}
       <img{% if include.class %} class="{{ include.class }}"{% endif %} src="{{- image | relative_url -}}" alt="{{- title -}}" width="{{- width -}}" height="{{- height -}}"{% if include.style %} style="{{ include.style }}"{% endif %}>
     {%- endcapture -%}
