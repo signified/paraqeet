@@ -137,7 +137,23 @@ To customise syntax highlighting to the look and feel of your project, override 
 
 Below are examples of the syntax highlighter at work.
 
-Without line numbers:
+#### Without Line Numbers
+{: .my-4}
+
+````
+```ruby
+class Greeter
+  def initialize(name="World")
+    @name = name
+  end
+
+  def say_hi
+    puts "Hi #{@name}!"
+  end
+end
+```
+````
+{: .mb-3}
 
 ```ruby
 class Greeter
@@ -152,7 +168,23 @@ end
 ```
 {: .mb-3}
 
-With line numbers:
+#### With Line Numbers
+{: .my-4}
+
+```
+{% raw %}{% highlight ruby linenos %}
+class Greeter
+  def initialize(name="World")
+    @name = name
+  end
+
+  def say_hi
+    puts "Hi #{@name}!"
+  end
+end
+{% endhighlight %}{% endraw %}
+```
+{: .mb-3}
 
 {% highlight ruby linenos %}
 class Greeter
