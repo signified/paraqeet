@@ -131,7 +131,11 @@ which looks like: {% include icon.html
 ### Highlight
 {: .my-4}
 
-Paraqeet ships with syntax highlighting out of the box by providing a CSS theme for [Rouge](http://rouge.jneen.net/), Jekyll's built-in [code snippet highlighting](https://jekyllrb.com/docs/liquid/tags/#code-snippet-highlighting).
+Paraqeet ships with syntax highlighting out of the box by providing built-in CSS theme support for [Rouge](http://rouge.jneen.net/) - Jekyll's default code syntax highlighter.
+
+To customise syntax highlighting to the look and feel of your project, override [`_sass/_highlight.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_highlight.scss).
+
+Below are examples of the syntax highlighter at work.
 
 Without line numbers:
 
