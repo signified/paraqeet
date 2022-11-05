@@ -2,14 +2,17 @@
 layout: home
 ---
 
-# {{ site.title }}
-{: .display-4}
-
-{{ site.description }}
-{: .lead}
-
-![Bootstrap v5.2.2](https://img.shields.io/badge/Bootstrap-v5.2.2-712cf9)
-![Bootstrap Icons v1.9.0](https://img.shields.io/badge/Bootstrap%20Icons-v1.9.0-712cf9)
+<header class="bg-dark text-light py-5">
+  <div class="container">
+    <h1 class="display-1 mb-4">{{ site.title }}</h1>
+    <p class="lead mb-4">{{ site.description }}</p>
+    <a class="btn btn-outline-light" href="https://getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap 5.2.2</a>
+    <a class="btn btn-outline-light" href="https://icons.getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap Icons 1.9.0</a>
+    <a class="btn btn-secondary" href="https://github.com/signified/paraqeet" target="_blank">{% include icon.html name='github' %} View on GitHub</a>
+  </div>
+</header>
+<main class="py-5">
+  <div class="container" markdown="1">
 
 Paraqeet is a [Jekyll](https://jekyllrb.com/) theme for building websites using [Bootstrap](https://getbootstrap.com/) - the most popular HTML, CSS, and JS library in the world. Paraqeet comes pre-loaded with the latest versions of Bootstrap and [Bootstrap Icons](https://icons.getbootstrap.com/), as well as built-in CSS theme support for [Rouge](http://rouge.jneen.net/) - Jekyll's default code syntax highlighter.
 
@@ -117,6 +120,8 @@ which looks like: {% include icon.html
 #### Options
 {: .my-4}
 
+<div class="table-responsive mb-5" markdown="1">
+
 | Option   | Description                                                                                 | Type   | Deafult  | Required? |
 |----------|---------------------------------------------------------------------------------------------|--------|----------|-----------|
 | `name`   | The name of the icon (e.g. `'bootstrap-fill'`).                                             | String | `nil`    | Yes       |
@@ -126,7 +131,9 @@ which looks like: {% include icon.html
 | `height` | The height of the icon in pixels.                                                           | Number | `16`     | No        |
 | `class`  | Any additional class attribute values to be applied (e.g. `'fs-3 text-info'`).           | String | `nil`    | No        |
 | `style`  | The style attribute value to be applied (e.g. `'font-size: 2rem; color: cornflowerblue;'`). | String | `nil`    | No        |
-{: .table .mb-5 }
+{: .table}
+
+</div>
 
 ### Highlight
 {: .my-4}
@@ -197,3 +204,6 @@ class Greeter
   end
 end
 {% endhighlight %}
+
+  </div>
+</main>
