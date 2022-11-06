@@ -11,7 +11,7 @@ layout: home
     <a class="btn btn-secondary" href="https://github.com/signified/paraqeet" target="_blank">{% include icon.html name='github' %} View on GitHub</a>
   </div>
 </header>
-<main class="py-5">
+<main class="py-5 prose">
   <div class="container" markdown="1">
 
 Paraqeet is a [Jekyll](https://jekyllrb.com/) theme for building websites using [Bootstrap](https://getbootstrap.com/) - the most popular HTML, CSS, and JS library in the world. Paraqeet comes pre-loaded with the latest versions of Bootstrap and [Bootstrap Icons](https://icons.getbootstrap.com/), as well as built-in CSS theme support for [Rouge](http://rouge.jneen.net/) - Jekyll's default code syntax highlighter.
@@ -129,9 +129,8 @@ which looks like: {% include icon.html
 | `size`   | The width and height of the icon in pixels (shorthand for `width` and `height`).            | Number | `16`     | No        |
 | `width`  | The width of the icon in pixels.                                                            | Number | `16`     | No        |
 | `height` | The height of the icon in pixels.                                                           | Number | `16`     | No        |
-| `class`  | Any additional class attribute values to be applied (e.g. `'fs-3 text-info'`).           | String | `nil`    | No        |
+| `class`  | Any additional class attribute values to be applied (e.g. `'fs-3 text-info'`).              | String | `nil`    | No        |
 | `style`  | The style attribute value to be applied (e.g. `'font-size: 2rem; color: cornflowerblue;'`). | String | `nil`    | No        |
-{: .table}
 
 </div>
 
@@ -204,6 +203,17 @@ class Greeter
   end
 end
 {% endhighlight %}
+
+### Typography
+{: .my-4}
+
+Inspired by the [Tailwind CSS Typography Plugin](https://tailwindcss.com/docs/typography-plugin), Paraqeet ships with a [`.prose`](https://github.com/signified/paraqeet/blob/main/_sass/_prose.scss) class you can use to add typographic defaults to any vanilla HTML you don’t control, like HTML rendered from Markdown, or pulled from a CMS.
+
+```html
+<article class="prose">
+  {% raw %}{{ markdown }}{% endraw %}
+</article>
+```
 
   </div>
 </main>
