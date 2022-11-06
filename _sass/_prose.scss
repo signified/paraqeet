@@ -1,0 +1,75 @@
+.prose {
+
+  // Abbreviations
+  abbr {
+    @include font-size($initialism-font-size);
+    text-transform: uppercase;
+  }
+
+  // Blockquotes
+  blockquote {
+    margin-bottom: $blockquote-margin-y;
+    @include font-size($blockquote-font-size);
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+    figcaption {
+      margin-top: -$blockquote-margin-y;
+      margin-bottom: $blockquote-margin-y;
+      @include font-size($blockquote-footer-font-size);
+      color: $blockquote-footer-color;
+
+      &::before {
+        content: "\2014\00A0";
+      }
+    }
+  }
+
+  // Figures
+  figure {
+    display: inline-block;
+
+    figcaption {
+      @include font-size($figure-caption-font-size);
+      color: $figure-caption-color;
+    }
+
+    img {
+      margin-bottom: $spacer * .5;
+      line-height: 1;
+      @include img-fluid();
+    }
+  }
+
+  // Images
+  img {
+    @include img-fluid();
+  }
+
+  // Tables
+  table {
+    width: 100%;
+    margin-bottom: $spacer;
+    color: var(--#{$prefix}table-color);
+    vertical-align: $table-cell-vertical-align;
+    border-color: var(--#{$prefix}table-border-color);
+
+    > :not(caption) > * > * {
+      padding: $table-cell-padding-y $table-cell-padding-x;
+      background-color: var(--#{$prefix}table-bg);
+      border-bottom-width: $table-border-width;
+      box-shadow: inset 0 0 0 9999px var(--#{$prefix}table-accent-bg);
+    }
+
+    > tbody {
+      vertical-align: inherit;
+    }
+
+    > thead {
+      vertical-align: bottom;
+    }
+  }
+
+}
