@@ -8,6 +8,10 @@
 
   // Blockquotes
   blockquote {
+    border-left: map-get($border-widths, 4) $border-style $border-color;
+    padding-left: $spacer;
+    font-style: italic;
+
     margin-bottom: $blockquote-margin-y;
     @include font-size($blockquote-font-size);
 
@@ -48,10 +52,17 @@
     @include img-fluid();
   }
 
+  pre:not(.highlight pre) {
+    background: $light;
+    margin-bottom: 0 0 map-get($spacers, 4) 0;
+    padding: $spacer;
+    color: $pre-color;
+  }
+
   // Tables
-  table {
+  table:not(.highlight table) {
     width: 100%;
-    margin-bottom: $spacer;
+    margin-bottom: map-get($spacers, 4);
     color: var(--#{$prefix}table-color);
     vertical-align: $table-cell-vertical-align;
     border-color: var(--#{$prefix}table-border-color);
@@ -70,6 +81,25 @@
     > thead {
       vertical-align: bottom;
     }
+  }
+
+  // Blocks
+  .highlight,
+  address,
+  dl,
+  form,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  ol:not(li ol),
+  ul:not(li ul) {
+    margin-bottom: map-get($spacers, 4);
+  }
+
+  hr {
+    margin: map-get($spacers, 5) 0;
   }
 
 }
