@@ -6,9 +6,9 @@ layout: home
   <div class="container">
     <h1 class="display-1 mb-4">{{ site.title }}</h1>
     <p class="lead mb-4">{{ site.description }}</p>
-    <a class="btn btn-outline-light" href="https://getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap 5.2.2</a>
-    <a class="btn btn-outline-light" href="https://icons.getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap Icons 1.9.0</a>
-    <a class="btn btn-secondary" href="https://github.com/signified/paraqeet" target="_blank">{% include icon.html name='github' %} View on GitHub</a>
+    <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap 5.2.2</a>
+    <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://icons.getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap Icons 1.9.0</a>
+    <a class="d-block d-md-inline btn btn-secondary" href="https://github.com/signified/paraqeet" target="_blank">{% include icon.html name='github' %} View on GitHub</a>
   </div>
 </header>
 <main class="py-5 prose">
@@ -26,10 +26,8 @@ Paraqeet is intended to be used as the basis for highly customised websites usin
 These can be used, overridden or disabled as required.
 
 ---
-{: .my-5}
 
 ## Installation
-{: .my-5}
 
 1. Add this line to your Jekyll site's `Gemfile`:
 ```ruby
@@ -45,13 +43,10 @@ bundle
 ```
 
 ---
-{: .my-5}
 
 ## Usage
-{: .my-5}
 
 ### Bootstrap
-{: .my-4}
 
 The core of Paraqueet is Bootstrap - the most popular HTML, CSS, and JS library in the world.
 
@@ -65,7 +60,6 @@ $font-family-sans-serif: "Roboto", sans-serif !default;
 ```
 
 ### Bootstrap Icons
-{: .my-4}
 
 Paraqeet ships with Bootstrap Icons - the official open source SVG icon library for Bootstrap.
 
@@ -74,19 +68,16 @@ To make it easy to use Bootstrap Icons in your project, Paraqeet ships with an [
 ```liquid
 {% raw %}{% include icon.html name='bootstrap' %}{% endraw %}
 ```
-{: .mb-3}
 
 which will produce:
 
 ```html
 {% include icon.html name='bootstrap' %}
 ```
-{: .mb-3}
 
 which looks like: {% include icon.html name='bootstrap' %}
 
 #### Advanced Usage
-{: .my-4}
 
 ```liquid
 {% raw %}{% include icon.html
@@ -96,7 +87,6 @@ which looks like: {% include icon.html name='bootstrap' %}
   class='fs-3 text-info'
 %}{% endraw %}
 ```
-{: .mb-3}
 
 which will produce:
 
@@ -108,7 +98,6 @@ which will produce:
   class='fs-3 text-info'
 %}
 ```
-{: .mb-3}
 
 which looks like: {% include icon.html
   name='bootstrap'
@@ -118,7 +107,6 @@ which looks like: {% include icon.html
 %}
 
 #### Options
-{: .my-4}
 
 <div class="table-responsive mb-5" markdown="1">
 
@@ -135,7 +123,6 @@ which looks like: {% include icon.html
 </div>
 
 ### Highlight
-{: .my-4}
 
 Paraqeet ships with syntax highlighting out of the box by providing built-in CSS theme support for [Rouge](http://rouge.jneen.net/) - Jekyll's default code syntax highlighter.
 
@@ -144,7 +131,6 @@ To customise syntax highlighting to the look and feel of your project, override 
 Below are examples of the syntax highlighter at work.
 
 #### Without Line Numbers
-{: .my-4}
 
 ````
 ```ruby
@@ -159,7 +145,6 @@ class Greeter
 end
 ```
 ````
-{: .mb-3}
 
 ```ruby
 class Greeter
@@ -172,10 +157,8 @@ class Greeter
   end
 end
 ```
-{: .mb-3}
 
 #### With Line Numbers
-{: .my-4}
 
 ```
 {% raw %}{% highlight ruby linenos %}
@@ -190,7 +173,6 @@ class Greeter
 end
 {% endhighlight %}{% endraw %}
 ```
-{: .mb-3}
 
 {% highlight ruby linenos %}
 class Greeter
@@ -205,7 +187,6 @@ end
 {% endhighlight %}
 
 ### Typography
-{: .my-4}
 
 Inspired by the [Tailwind CSS Typography Plugin](https://tailwindcss.com/docs/typography-plugin), Paraqeet ships with a [`.prose`](https://github.com/signified/paraqeet/blob/main/_sass/_prose.scss) class you can use to add typographic defaults to any vanilla HTML you don’t control, like HTML rendered from Markdown, or pulled from a CMS.
 
@@ -214,6 +195,8 @@ Inspired by the [Tailwind CSS Typography Plugin](https://tailwindcss.com/docs/ty
   {% raw %}{{ markdown }}{% endraw %}
 </article>
 ```
+
+To see what it looks like in action, check out the [live demo]({{- '/typography' | relative_url -}}).
 
   </div>
 </main>
