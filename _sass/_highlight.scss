@@ -1,5 +1,7 @@
 .highlight {
 
+  width: 100%;
+
   * {
     font-size: $font-size-sm;
   }
@@ -13,21 +15,6 @@
     margin: 0;
     padding: $spacer;
     color: $pre-color;
-  }
-
-  table,
-  thead,
-  tbody,
-  tr,
-  th,
-  td {
-    margin: 0 !important;
-    padding: 0 !important;
-    color: $pre-color !important;
-    vertical-align: middle !important;
-    border: none !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
   }
 
   td {
