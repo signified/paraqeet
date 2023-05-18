@@ -50,7 +50,7 @@ bundle
 
 The core of Paraqueet is Bootstrap - the most popular HTML, CSS, and JS library in the world.
 
-To customise Bootstrap to the look and feel of your project, override the variables found in [`_sass/bootstrap/_variables.scss`](https://github.com/signified/paraqeet/blob/main/_sass/bootstrap/_variables.scss) with your own values in [`_sass/_variables.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_variables.scss).
+To customise Bootstrap to the look and feel of your project, override the variables found in [`_sass/bootstrap/_variables.scss`](https://github.com/signified/paraqeet/blob/main/_sass/bootstrap/_variables.scss) and [`_sass/bootstrap/_variables-dark.scss`](https://github.com/signified/paraqeet/blob/main/_sass/bootstrap/_variables-dark.scss) with your own values in [`_sass/_variables.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_variables.scss) and [`_sass/_variables-dark.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_variables-dark.scss) respectively.
 
 For example, to change the primary theme colour to purple and the default sans-serif font family to Roboto, add the following to `_sass/_variables.scss`:
 
