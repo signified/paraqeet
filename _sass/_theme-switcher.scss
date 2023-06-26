@@ -1,0 +1,28 @@
+.theme-switcher .dropdown-menu {
+    --bs-dropdown-padding-x: .25rem;
+    --bs-dropdown-padding-y: .25rem;
+    --bs-dropdown-link-hover-bg: rgba(var(--bs-primary-rgb), .1);
+    --bs-dropdown-link-active-bg: rgba(var(--bs-primary-rgb), 1);
+    --bs-dropdown-font-size: .875rem;
+    font-size: .875rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(var(--bs-body-color-rgb), 0.15);
+
+    .active {
+        font-weight: 600;
+
+        .bi {
+            display: block !important;
+        }
+    }
+
+    li {
+        border-radius: 0.25rem;
+        margin-top: var(--bs-dropdown-padding-y);
+        overflow: hidden;
+
+        :first-child {
+            margin-top: 0;
+        }
+    }
+}

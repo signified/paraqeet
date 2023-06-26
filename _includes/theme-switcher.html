@@ -1,0 +1,33 @@
+{%- assign class = nil -%}
+
+
+<div class="theme-switcher dropdown{% if include.class %} {{ include.class }}{% endif %}">
+  <button class="btn btn-link text-reset py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bs-theme"
+    type="button" data-bs-toggle="dropdown">
+    <span class="bi mb-2 theme-icon-active">{% include icon.html name='sun-fill' type='sprite' size=16 %}</span>
+    <span class="d-none ms-2">Toggle theme</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bs-theme" style="--bs-dropdown-min-width: 8rem;">
+    <li>
+      <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light">
+        {% include icon.html name='sun-fill' class="me-2 opacity-50 theme-icon" type='sprite' size=16 %}
+        Light
+        {% include icon.html name='check2' class="ms-auto d-none" type='sprite' size=16 %}
+      </button>
+    </li>
+    <li>
+      <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+        {% include icon.html name='moon-stars-fill' class="me-2 opacity-50 theme-icon" type='sprite' size=16 %}
+        Dark
+        {% include icon.html name='check2' class="ms-auto d-none" type='sprite' size=16 %}
+      </button>
+    </li>
+    <li>
+      <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+        {% include icon.html name='circle-half' class="me-2 opacity-50 theme-icon" type='sprite' size=16 %}
+        Auto
+        {% include icon.html name='check2' class="ms-auto d-none" type='sprite' size=16 %}
+      </button>
+    </li>
+  </ul>
+</div>

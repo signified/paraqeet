@@ -8,7 +8,7 @@
 
   margin: 0;
   padding: 0;
-  background-color: $light;
+  background-color: var(--bs-tertiary-bg);
   border-radius: $border-radius;
 
   pre {
@@ -32,7 +32,7 @@
   }
 
   .hll {
-    background-color: $yellow-100;
+    background-color: var(--bs-warning-bg-subtle);
   }
 
   .c,
