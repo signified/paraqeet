@@ -6,9 +6,9 @@ layout: home
   <div class="container">
     <h1 class="display-1 mb-4">{{ site.title }}</h1>
     <p class="lead mb-4">{{ site.description }}</p>
-    <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap 5.3.2</a>
-    <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://icons.getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap Icons 1.11.3</a>
-    <a class="d-block d-md-inline btn btn-secondary" href="https://github.com/signified/paraqeet" target="_blank">{% include icon.html name='github' %} View on GitHub</a>
+    <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://getbootstrap.com/" target="_blank">{% icon bootstrap %} Bootstrap 5.3.3</a>
+    <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://icons.getbootstrap.com/" target="_blank">{% icon bootstrap %} Bootstrap Icons 1.11.3</a>
+    <a class="d-block d-md-inline btn btn-secondary" href="https://github.com/signified/paraqeet" target="_blank">{% icon github %} View on GitHub</a>
   </div>
 </header>
 <main class="py-5 prose">
@@ -18,12 +18,12 @@ Paraqeet is a [Jekyll](https://jekyllrb.com/) theme for building websites using 
 
 Paraqeet is intended to be used as the basis for highly customised websites using Bootstrap. Like any Jekyll theme, Paraqeet ships with a base set of:
 
-- [`_includes`](https://github.com/signified/paraqeet/tree/main/_includes)
+- [`_plugins`](https://github.com/signified/paraqeet/tree/main/_plugins)
 - [`_layouts`](https://github.com/signified/paraqeet/tree/main/_layouts)
 - [`_sass`](https://github.com/signified/paraqeet/tree/main/_sass)
 - [`assets`](https://github.com/signified/paraqeet/tree/main/assets)
 
-These can be used, overridden or disabled as required.
+These can be used or overridden as required.
 
 ---
 
@@ -48,7 +48,7 @@ bundle
 
 ### Bootstrap
 
-The core of Paraqueet is Bootstrap - the most popular HTML, CSS, and JS library in the world.
+The core of Paraqueet is [Bootstrap](https://getbootstrap.com/) - the most popular HTML, CSS, and JS library in the world.
 
 To customise Bootstrap to the look and feel of your project, override the variables found in [`_sass/bootstrap/_variables.scss`](https://github.com/signified/paraqeet/blob/main/_sass/bootstrap/_variables.scss) and [`_sass/bootstrap/_variables-dark.scss`](https://github.com/signified/paraqeet/blob/main/_sass/bootstrap/_variables-dark.scss) with your own values in [`_sass/_variables.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_variables.scss) and [`_sass/_variables-dark.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_variables-dark.scss) respectively.
 
@@ -61,64 +61,47 @@ $font-family-sans-serif: "Roboto", sans-serif !default;
 
 ### Bootstrap Icons
 
-Paraqeet ships with Bootstrap Icons - the official open source SVG icon library for Bootstrap.
+Paraqeet ships with [Bootstrap Icons](https://icons.getbootstrap.com/) - the official open source SVG icon library for Bootstrap.
 
-To make it easy to use Bootstrap Icons in your project, Paraqeet ships with an [`icon`](https://github.com/signified/paraqeet/blob/main/_includes/icon.html) include. The most basic usage of the `icon` include is:
+To make it easy to use Bootstrap Icons in your project, Paraqeet ships with an [`icon`](https://github.com/signified/paraqeet/blob/main/_plugins/icon.rb) tag. The most basic usage of the `icon` tag is:
 
 ```liquid
-{% raw %}{% include icon.html name='bootstrap' %}{% endraw %}
+{% raw %}{% icon bootstrap-fill %}{% endraw %}
 ```
 
 which will produce:
 
 ```html
-{% include icon.html name='bootstrap' %}
+{% icon bootstrap-fill %}
 ```
 
-which looks like: {% include icon.html name='bootstrap' %}
+which looks like: {% icon bootstrap-fill %}
 
 #### Advanced Usage
 
 ```liquid
-{% raw %}{% include icon.html
-  name='bootstrap'
-  type='sprite'
-  size=64
-  class='fs-3 text-info'
-%}{% endraw %}
+{% raw %}{% icon bootstrap-fill | type: sprite | size: 64 | class: fs-3 text-info %}{% endraw %}
 ```
 
 which will produce:
 
 ```xml
-{% include icon.html
-  name='bootstrap'
-  type='sprite'
-  size=64
-  class='fs-3 text-info'
-%}
+{% icon bootstrap-fill | type: sprite | size: 64 | class: fs-3 text-info %}
 ```
 
-which looks like: {% include icon.html
-  name='bootstrap'
-  type='sprite'
-  size=64
-  class='fs-3 text-info'
-%}
+which looks like: {% icon bootstrap-fill | type: sprite | size: 64 | class: fs-3 text-info %}
 
 #### Options
 
 <div class="table-responsive mb-5" markdown="1">
 
-| Option   | Description                                                                                 | Type   | Deafult  | Required? |
-|----------|---------------------------------------------------------------------------------------------|--------|----------|-----------|
-| `name`   | The name of the icon (e.g. `'bootstrap-fill'`).                                             | String | `nil`    | Yes       |
-| `type`   | The type of icon. Available values are `'font'`, `'image'`, and `'sprite'`.                 | String | `'font'` | No        |
-| `size`   | The width and height of the icon in pixels (shorthand for `width` and `height`).            | Number | `16`     | No        |
-| `width`  | The width of the icon in pixels.                                                            | Number | `16`     | No        |
-| `height` | The height of the icon in pixels.                                                           | Number | `16`     | No        |
-| `class`  | Any additional class attribute values to be applied (e.g. `'fs-3 text-info'`).              | String | `nil`    | No        |
-| `style`  | The style attribute value to be applied (e.g. `'font-size: 2rem; color: cornflowerblue;'`). | String | `nil`    | No        |
+| Name          | Description                                                                       | Deafult | Required? |
+|---------------|-----------------------------------------------------------------------------------|---------|-----------|
+| `name`        | The name of the icon (e.g. `bootstrap-fill`).                                     | `nil`   | Yes       |
+| `type`        | The type of icon. Available values are `font`, `image`, `sprite`, and `embedded`. | `font`  | No        |
+| `size`        | The width and height of the icon in pixels.                                       | `16`    | No        |
+| `class`       | Any additional class attribute values to be applied (e.g. `fs-3 text-info`).      | `nil`   | No        |
+| `aria_hidden` | For purely decorative icons, adds the `aria-hidden="true"` attribute.             | `false` | No        |
 
 </div>
 
