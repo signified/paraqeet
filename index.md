@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<header class="bg-dark text-light py-5">
+<header class="py-4 py-md-5 text-center text-md-start bg-dark text-light">
   <div class="container">
     <h1 class="display-1 mb-4">{{ site.title }}</h1>
     <p class="lead mb-4">{{ site.description }}</p>
@@ -11,19 +11,10 @@ layout: home
     <a class="d-block d-md-inline btn btn-secondary" href="https://github.com/signified/paraqeet" target="_blank">{% icon github %} View on GitHub</a>
   </div>
 </header>
-<main class="py-5 prose">
-  <div class="container" markdown="1">
+<main class="py-4 py-md-5">
+  <article class="container prose col-12 col-md-10 col-lg-8 col-xxl-6" markdown="1">
 
-Paraqeet is a [Jekyll](https://jekyllrb.com/) theme for building websites using [Bootstrap](https://getbootstrap.com/) - the most popular HTML, CSS, and JS library in the world. Paraqeet comes pre-loaded with the latest versions of Bootstrap and [Bootstrap Icons](https://icons.getbootstrap.com/), as well as built-in CSS theme support for [Rouge](http://rouge.jneen.net/) - Jekyll's default code syntax highlighter.
-
-Paraqeet is intended to be used as the basis for highly customised websites using Bootstrap. Like any Jekyll theme, Paraqeet ships with a base set of:
-
-- [`_plugins`](https://github.com/signified/paraqeet/tree/main/_plugins)
-- [`_layouts`](https://github.com/signified/paraqeet/tree/main/_layouts)
-- [`_sass`](https://github.com/signified/paraqeet/tree/main/_sass)
-- [`assets`](https://github.com/signified/paraqeet/tree/main/assets)
-
-These can be used or overridden as required.
+Paraqeet is a Jekyll theme for building websites using Bootstrap - the most popular HTML, CSS, and JS library in the world. Paraqeet comes pre-loaded with the latest versions of Bootstrap and Bootstrap Icons - the official open source SVG icon library for Bootstrap, as well as built-in Sass support for Rouge - Jekyll’s default code syntax highlighter.
 
 ---
 
@@ -48,8 +39,6 @@ bundle
 
 ### Bootstrap
 
-The core of Paraqueet is [Bootstrap](https://getbootstrap.com/) - the most popular HTML, CSS, and JS library in the world.
-
 To customise Bootstrap to the look and feel of your project, override the variables found in [`_sass/bootstrap/_variables.scss`](https://github.com/signified/paraqeet/blob/main/_sass/bootstrap/_variables.scss) and [`_sass/bootstrap/_variables-dark.scss`](https://github.com/signified/paraqeet/blob/main/_sass/bootstrap/_variables-dark.scss) with your own values in [`_sass/_variables.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_variables.scss) and [`_sass/_variables-dark.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_variables-dark.scss) respectively.
 
 For example, to change the primary theme colour to purple and the default sans-serif font family to Roboto, add the following to `_sass/_variables.scss`:
@@ -61,35 +50,35 @@ $font-family-sans-serif: "Roboto", sans-serif !default;
 
 ### Bootstrap Icons
 
-Paraqeet ships with [Bootstrap Icons](https://icons.getbootstrap.com/) - the official open source SVG icon library for Bootstrap.
+To make it easy to use Bootstrap Icons in your project, Paraqeet ships with an `icon` tag.
 
-To make it easy to use Bootstrap Icons in your project, Paraqeet ships with an [`icon`](https://github.com/signified/paraqeet/blob/main/_plugins/icon.rb) tag. The most basic usage of the `icon` tag is:
+#### Basic Usage
 
 ```liquid
-{% raw %}{% icon bootstrap-fill %}{% endraw %}
+{% raw %}{% icon emoji-heart-eyes %}{% endraw %}
 ```
 
 which will produce:
 
 ```html
-{% icon bootstrap-fill %}
+{% icon emoji-heart-eyes %}
 ```
 
-which looks like: {% icon bootstrap-fill %}
+which looks like: {% icon emoji-heart-eyes %}
 
 #### Advanced Usage
 
 ```liquid
-{% raw %}{% icon bootstrap-fill | type: sprite | size: 64 | class: fs-3 text-info %}{% endraw %}
+{% raw %}{% icon check-circle-fill | type: sprite | size: 64 | class: text-success | aria_hidden: true %}{% endraw %}
 ```
 
 which will produce:
 
 ```xml
-{% icon bootstrap-fill | type: sprite | size: 64 | class: fs-3 text-info %}
+{% icon check-circle-fill | type: sprite | size: 64 | class: text-success | aria_hidden: true %}
 ```
 
-which looks like: {% icon bootstrap-fill | type: sprite | size: 64 | class: fs-3 text-info %}
+which looks like: {% icon check-circle-fill | type: sprite | size: 64 | class: text-success | aria_hidden: true %}
 
 #### Options
 
@@ -107,13 +96,9 @@ which looks like: {% icon bootstrap-fill | type: sprite | size: 64 | class: fs-3
 
 ### Highlight
 
-Paraqeet ships with syntax highlighting out of the box by providing built-in CSS theme support for [Rouge](http://rouge.jneen.net/) - Jekyll's default code syntax highlighter.
+To customise syntax highlighting to the look and feel of your project, override [`_sass/_highlight.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_highlight.scss) in your own project. Below are examples of the syntax highlighter in use.
 
-To customise syntax highlighting to the look and feel of your project, override [`_sass/_highlight.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_highlight.scss).
-
-Below are examples of the syntax highlighter at work.
-
-#### Without Line Numbers
+Without line numbers:
 
 ````
 ```ruby
@@ -141,7 +126,7 @@ class Greeter
 end
 ```
 
-#### With Line Numbers
+With line numbers:
 
 ```
 {% raw %}{% highlight ruby linenos %}
@@ -171,15 +156,17 @@ end
 
 ### Typography
 
-Inspired by the [Tailwind CSS Typography Plugin](https://tailwindcss.com/docs/typography-plugin), Paraqeet ships with a [`.prose`](https://github.com/signified/paraqeet/blob/main/_sass/_prose.scss) class you can use to add typographic defaults to any vanilla HTML you don’t control, like HTML rendered from Markdown, or pulled from a CMS.
+Inspired by the Tailwind CSS Typography Plugin, Paraqeet ships with a `.prose` class you can use to add typographic defaults to any vanilla HTML you don’t control, like HTML rendered from Markdown, or pulled from a CMS.
 
 ```html
 <article class="prose">
-  {% raw %}{{ markdown }}{% endraw %}
+  {% raw %}{{ content }}{% endraw %}
 </article>
 ```
 
+To customise typographic defaults to the look and feel of your project, override [`_sass/_prose.scss`](https://github.com/signified/paraqeet/blob/main/_sass/_prose.scss) in your own project.
+
 To see what it looks like in action, check out the [live demo]({{- '/typography' | relative_url -}}).
 
-  </div>
+  </article>
 </main>
