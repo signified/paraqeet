@@ -3,13 +3,13 @@ title: Typography
 layout: default
 ---
 
-<header class="my-5">
+<header class="py-4 py-md-5">
   <div class="container">
     <p><a href="{{- '/' | relative_url -}}">{% icon arrow-left %} Back</a></p>
   </div>
 </header>
-<main class="my-5">
-  <div class="container col-12 col-lg-10 col-xl-8 col-xxl-6 mx-auto prose">
+<main class="py-4 py-md-5">
+  <article class="container prose col-12 col-md-10 col-lg-8 col-xxl-6">
     <h1>{{ page.title }}</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sagittis magna, non volutpat quam pharetra vel. Sed sapien elit, dignissim a varius sit amet, congue eget augue. Fusce dictum interdum erat vel rhoncus. Sed euismod, orci vel commodo aliquet, eros neque pulvinar justo, non varius lacus ex ut metus. Aliquam ultrices nulla ac nunc pretium, vel lacinia tortor pulvinar. Etiam pulvinar nibh molestie leo hendrerit pretium.</p>
     <p>Vivamus vulputate turpis sed eros dictum dictum. Donec suscipit vehicula ligula, at ultricies est egestas vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent imperdiet iaculis commodo. Quisque nec facilisis lectus, eu condimentum augue. Fusce vel lorem vehicula, vestibulum magna eu, malesuada urna. Pellentesque suscipit ligula quis ipsum tincidunt tempor.</p>
@@ -25,8 +25,8 @@ layout: default
     <p>
       You can use the <code>&lt;mark&gt;</code> tag to <mark>highlight</mark> text.
       The <code>&lt;del&gt;</code> tag is used for text that is meant to be treated as <del>deleted</del>.
-      Use the <code>&lt;sgt;</code> tag if the text is <s>no longer accurate</s>.
-      The <code>&lt;insgt;</code> tag is for text that is meant to be treated as <ins>an addition to the document</ins>.
+      Use the <code>&lt;s&gt;</code> tag if the text is <s>no longer accurate</s>.
+      The <code>&lt;ins&gt;</code> tag is for text that is meant to be treated as <ins>an addition to the document</ins>.
       <u>This text will render as underlined</u>.
       <small>This text is meant to be treated as fine print.</small>
       <strong>This text is rendered as bold.</strong>
@@ -148,5 +148,5 @@ layout: default
         </tr>
       </tbody>
     </table>
-  </div>
+  </article>
 </main>
