@@ -36,13 +36,15 @@ layout: default
     </p>
     <hr>
     <h2>Code blocks</h2>
-    <pre>const myModal = document.querySelector('#myModal')
+    <pre>class Greeter
+  def initialize(name="World")
+    @name = name
+  end
 
-  myModal.addEventListener('show.bs.modal', event => {
-    if (!data) {
-      return event.preventDefault() // stops modal from being shown
-    }
-  })</pre>
+  def say_hi
+    puts "Hi #{@name}!"
+  end
+end</pre>
     <hr>
     <h2>Blockquotes</h2>
     <blockquote>
