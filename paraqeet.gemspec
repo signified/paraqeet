@@ -13,9 +13,9 @@ Gem::Specification.new do |spec|
   spec.description = <<-EOF
     Paraqeet is a Jekyll theme for building websites using Bootstrap - the most
     popular HTML, CSS, and JS library in the world. Paraqeet comes pre-loaded
-    with the latest versions of Bootstrap and Bootstrap Icons, as well as
-    built-in CSS theme support for Rouge - Jekyll’s default code syntax
-    highlighter.
+    with the latest versions of Bootstrap and Bootstrap Icons - the official
+    open source SVG icon library for Bootstrap, as well as built-in Sass support
+    for Rouge - Jekyll’s default code syntax highlighter.
   EOF
 
   spec.metadata = {
