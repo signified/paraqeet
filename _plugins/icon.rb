@@ -5,18 +5,15 @@ module Jekyll
       super
 
       @name = nil
-      @title = nil
       @type = "font"
       @size = 16
       @class = nil
       @aria_hidden = false
-      @path = nil
 
       params = input.downcase.split("|")
       params = params.collect(&:strip)
 
       @name = params[0]
-      @title = @name.gsub("-", " ").capitalize
 
       params.shift(1)
 
@@ -28,38 +25,56 @@ module Jekyll
     end
 
     def render(context)
-      baseurl = context.registers[:site].config["baseurl"]
-      @path = "#{baseurl}/assets/bootstrap-icons/"
-
+      path = "#{context.registers[:site].config["baseurl"]}/assets/bootstrap-icons/"
+      title = @name.gsub("-", " ").capitalize
       icon = ""
 
       case @type
 
       when "font"
-        class_attr = "bi bi-#{@name}"
+        icon = "<i aria-label=\"#{title}\" class=\"bi bi-#{@name}\"></i>"
         unless @class.nil? || @class.empty?
-          class_attr += " #{@class}"
+          icon = icon.gsub("class=\"bi", "class=\"#{@class} bi")
         end
-        icon = "<i class='#{class_attr}' title='#{@title}'></i>"
+        unless @aria_hidden == false
+          icon = icon.gsub("<i", "<i aria-hidden=\"true\"")
+        end
 
       when "image"
-        icon = "<img src='#{@path}#{@name}.svg' alt='#{@title}' width='#{@size}' height='#{@size}'"
+        icon = "<img alt=\"#{title}\" src=\"#{path}#{@name}.svg\" width=\"#{@size}\" height=\"#{@size}\">"
         unless @class.nil? || @class.empty?
-          icon += " class='#{@class}'"
+          icon = icon.gsub("<img", "<img class=\"#{@class}\"")
         end
-        icon += ">"
+        unless @aria_hidden == false
+          icon = icon.gsub("<img", "<img aria-hidden=\"true\"")
+        end
 
       when "sprite"
-        class_attr = "bi"
+        icon = "<svg aria-label=\"#{title}\" role=\"img\" width=\"#{@size}\" height=\"#{@size}\" fill=\"currentColor\" class=\"bi\"><use xlink:href=\"#{path}bootstrap-icons.svg##{@name}\"/></svg>"
         unless @class.nil? || @class.empty?
-          class_attr += " #{@class}"
+          icon = icon.gsub("class=\"bi\"", "class=\"bi #{@class}\"")
         end
-        icon = "<svg class='#{class_attr}' role='img' aria-label='#{@title}' width='#{@size}' height='#{@size}' fill='currentColor'><use xlink:href='#{@path}bootstrap-icons.svg##{@name}'/></svg>"
+        unless @aria_hidden == false
+          icon = icon.gsub("<svg", "<svg aria-hidden=\"true\"")
+        end
 
       when "embedded"
         source = context.registers[:site].config["source"]
         filename = File.join("#{source}", "assets", "bootstrap-icons", "#{@name}.svg")
-        icon = File.read(filename).strip
+        icon = File.read(filename)
+          .split(/[\r\n]/)
+          .collect(&:strip)
+          .join
+          .gsub("width=\"16\"", "width=\"#{@size}\"")
+          .gsub("height=\"16\"", "height=\"#{@size}\"")
+        unless @class.nil? || @class.empty?
+          original_class_value = "bi bi-#{@name}"
+          class_value = "#{original_class_value} #{@class}"
+          icon = icon.gsub("class=\"#{original_class_value}\"", "class=\"#{class_value}\"")
+        end
+        unless @aria_hidden == false
+          icon = icon.gsub("<svg", "<svg aria-hidden=\"true\"")
+        end
 
       end
 
