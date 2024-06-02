@@ -6,9 +6,9 @@ layout: home
   <div class="container">
     <h1 class="display-1 mb-4">{{ site.title }}</h1>
     <p class="lead mb-4">{{ site.description }}</p>
-    <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://getbootstrap.com/" target="_blank">{% icon bootstrap %} Bootstrap 5.3.3</a>
-    <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://icons.getbootstrap.com/" target="_blank">{% icon bootstrap %} Bootstrap Icons 1.11.3</a>
-    <a class="d-block d-md-inline btn btn-secondary" href="https://github.com/signified/paraqeet" target="_blank">{% icon github %} View on GitHub</a>
+    <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap 5.3.3</a>
+    <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://icons.getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap Icons 1.11.3</a>
+    <a class="d-block d-md-inline btn btn-secondary" href="https://github.com/signified/paraqeet" target="_blank">{% include icon.html name='github' %} View on GitHub</a>
   </div>
 </header>
 <main class="py-4 py-md-5">
@@ -50,47 +50,61 @@ $font-family-sans-serif: "Roboto", sans-serif !default;
 
 ### Bootstrap Icons
 
-To make it easy to use Bootstrap Icons in your project, Paraqeet ships with an `icon` tag.
+To make it easy to use Bootstrap Icons in your project, Paraqeet ships with an `icon` include.
 
 #### Basic Usage
 
 ```liquid
-{% raw %}{% icon bootstrap %}{% endraw %}
+{% raw %}{% include icon.html name='bootstrap' %}{% endraw %}
 ```
 
 which will produce:
 
 ```html
-{% icon bootstrap %}
+{% include icon.html name='bootstrap' %}
 ```
 
-which looks like: {% icon bootstrap %}
+which looks like: {% include icon.html name='bootstrap' %}
 
 #### Advanced Usage
 
 ```liquid
-{% raw %}{% icon rocket-takeoff-fill | type: sprite | size: 40 | class: text-primary | hidden: true %}{% endraw %}
+{% raw %}{% include icon.html
+  name='rocket-takeoff-fill'
+  type='sprite'
+  size='40'
+  class='text-primary'
+%}{% endraw %}
 ```
 
 which will produce:
 
 ```xml
-{% icon rocket-takeoff-fill | type: sprite | size: 40 | class: text-primary | hidden: true %}
+{% include icon.html
+  name='rocket-takeoff-fill'
+  type='sprite'
+  size='40'
+  class='text-primary'
+%}
 ```
 
-which looks like: {% icon rocket-takeoff-fill | type: sprite | size: 40 | class: text-primary | hidden: true %}
+which looks like: {% include icon.html
+  name='rocket-takeoff-fill'
+  type='sprite'
+  size='40'
+  class='text-primary'
+%}
 
 #### Options
 
 <div class="table-responsive mb-5" markdown="1">
 
-| Name     | Description                                                                       | Deafult | Required? |
-|----------|-----------------------------------------------------------------------------------|---------|-----------|
-| `name`   | The name of the icon (e.g. `bootstrap-fill`).                                     | `nil`   | Yes       |
-| `type`   | The type of icon. Available values are `font`, `image`, `sprite`, and `embedded`. | `font`  | No        |
-| `size`   | The width and height of the icon in pixels.                                       | `16`    | No        |
-| `class`  | Any additional class attribute values to be applied (e.g. `fs-3 text-info`).      | `nil`   | No        |
-| `hidden` | Adds the `aria-hidden` attribute for purely decorative icons.                     | `false` | No        |
+| Name     | Description                                                                  | Deafult  | Required? |
+|----------|------------------------------------------------------------------------------|----------|-----------|
+| `name`   | The name of the icon (e.g. `bootstrap-fill`).                                | `nil`    | Yes       |
+| `type`   | The type of icon. Available values are `font`, `image`, and `sprite`.        | `font`   | No        |
+| `size`   | The width and height of the icon in pixels.                                  | `16`     | No        |
+| `class`  | Any additional class attribute values to be applied (e.g. `fs-3 text-info`). | `nil`    | No        |
 
 </div>
 
