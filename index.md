@@ -69,31 +69,16 @@ which looks like: {% include icon.html name='bootstrap' %}
 #### Advanced Usage
 
 ```liquid
-{% raw %}{% include icon.html
-  name='rocket-takeoff-fill'
-  type='sprite'
-  size='40'
-  class='text-primary'
-%}{% endraw %}
+{% raw %}{% include icon.html name='rocket-takeoff-fill' type='sprite' size='40' class='text-primary' %}{% endraw %}
 ```
 
 which will produce:
 
 ```xml
-{% include icon.html
-  name='rocket-takeoff-fill'
-  type='sprite'
-  size='40'
-  class='text-primary'
-%}
+{% include icon.html name='rocket-takeoff-fill' type='sprite' size='40' class='text-primary' %}
 ```
 
-which looks like: {% include icon.html
-  name='rocket-takeoff-fill'
-  type='sprite'
-  size='40'
-  class='text-primary'
-%}
+which looks like: {% include icon.html name='rocket-takeoff-fill' type='sprite' size='40' class='text-primary' %}
 
 #### Options
 
