@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = "paraqeet"
-  spec.version = "2.0.1"
+  spec.version = "2.0.0"
   spec.author = "Robert Love"
   spec.email = "robertjohnlove@gmail.com"
 
@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
     "source_code_uri"   => "https://github.com/signified/paraqeet"
   }
 
-  spec.files = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_plugins|_sass|LICENSE|README|_config\.yml)!i) }
+  spec.files = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i) }
 
   spec.add_runtime_dependency "jekyll", "~> 4.2"
 end
