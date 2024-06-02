@@ -8,7 +8,7 @@ module Jekyll
       @type = "font"
       @size = 16
       @class = nil
-      @aria_hidden = false
+      @hidden = false
 
       params = input.downcase.split("|")
       params = params.collect(&:strip)
@@ -22,60 +22,57 @@ module Jekyll
         ary = ary.collect(&:strip)
         self.instance_variable_set("@#{ary[0]}", ary[1])
       }
+
+      @title = @name.gsub("-", " ").capitalize
+      @tag = "i"
+
+      if @class.nil? || @class.empty?
+        @class = "bi bi-#{@name}"
+      else
+        @class = "bi bi-#{@name} #{@class}"
+      end
     end
 
     def render(context)
-      path = "#{context.registers[:site].config["baseurl"]}/assets/bootstrap-icons/"
-      title = @name.gsub("-", " ").capitalize
+
+      @baseurl = context.registers[:site].config["baseurl"]
+      @path = "#{@baseurl}/assets/bootstrap-icons/"
+      @dir = File.join(context.registers[:site].config["source"], "assets", "bootstrap-icons")
+
       icon = ""
 
       case @type
 
       when "font"
-        icon = "<i aria-label=\"#{title}\" class=\"bi bi-#{@name}\"></i>"
-        unless @class.nil? || @class.empty?
-          icon = icon.gsub("class=\"bi", "class=\"#{@class} bi")
-        end
-        unless @aria_hidden == false
-          icon = icon.gsub("<i", "<i aria-hidden=\"true\"")
-        end
+        icon = "<i aria-label=\"#{@title}\" role=\"img\" class=\"#{@class}\"></i>"
 
       when "image"
-        icon = "<img alt=\"#{title}\" src=\"#{path}#{@name}.svg\" width=\"#{@size}\" height=\"#{@size}\">"
-        unless @class.nil? || @class.empty?
-          icon = icon.gsub("<img", "<img class=\"#{@class}\"")
-        end
-        unless @aria_hidden == false
-          icon = icon.gsub("<img", "<img aria-hidden=\"true\"")
-        end
+        @tag = "img"
+        icon = "<img alt=\"#{@title}\" role=\"img\" class=\"#{@class}\" width=\"#{@size}\" height=\"#{@size}\" src=\"#{@path}#{@name}.svg\">"
 
       when "sprite"
-        icon = "<svg aria-label=\"#{title}\" role=\"img\" width=\"#{@size}\" height=\"#{@size}\" fill=\"currentColor\" class=\"bi\"><use xlink:href=\"#{path}bootstrap-icons.svg##{@name}\"/></svg>"
-        unless @class.nil? || @class.empty?
-          icon = icon.gsub("class=\"bi\"", "class=\"bi #{@class}\"")
-        end
-        unless @aria_hidden == false
-          icon = icon.gsub("<svg", "<svg aria-hidden=\"true\"")
-        end
+        @tag = "svg"
+        icon = "<svg aria-label=\"#{@title}\" role=\"img\" focusable=\"false\" class=\"#{@class}\" width=\"#{@size}\" height=\"#{@size}\" fill=\"currentColor\"><use xlink:href=\"#{@path}bootstrap-icons.svg##{@name}\"/></svg>"
 
       when "embedded"
+        @tag = "svg"
         source = context.registers[:site].config["source"]
-        filename = File.join("#{source}", "assets", "bootstrap-icons", "#{@name}.svg")
+        filename = File.join(@dir, "#{@name}.svg")
         icon = File.read(filename)
           .split(/[\r\n]/)
           .collect(&:strip)
           .join
+          .gsub("<svg", "<svg focusable=\"false\"")
+          .gsub("<svg", "<svg role=\"img\"")
+          .gsub("<svg", "<svg aria-label=\"#{@title}\"")
+          .gsub("class=\"bi bi-#{@name}\"", "class=\"#{@class}\"")
           .gsub("width=\"16\"", "width=\"#{@size}\"")
           .gsub("height=\"16\"", "height=\"#{@size}\"")
-        unless @class.nil? || @class.empty?
-          original_class_value = "bi bi-#{@name}"
-          class_value = "#{original_class_value} #{@class}"
-          icon = icon.gsub("class=\"#{original_class_value}\"", "class=\"#{class_value}\"")
-        end
-        unless @aria_hidden == false
-          icon = icon.gsub("<svg", "<svg aria-hidden=\"true\"")
-        end
 
+      end
+
+      unless @hidden == false
+        icon = icon.gsub("<#{@tag}", "<#{@tag} aria-hidden=\"true\"")
       end
 
       icon
@@ -83,4 +80,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('icon', Jekyll::IconTag)
+Liquid::Template.register_tag("icon", Jekyll::IconTag)
