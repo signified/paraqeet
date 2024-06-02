@@ -55,42 +55,42 @@ To make it easy to use Bootstrap Icons in your project, Paraqeet ships with an `
 #### Basic Usage
 
 ```liquid
-{% raw %}{% icon emoji-heart-eyes %}{% endraw %}
+{% raw %}{% icon bootstrap %}{% endraw %}
 ```
 
 which will produce:
 
 ```html
-{% icon emoji-heart-eyes %}
+{% icon bootstrap %}
 ```
 
-which looks like: {% icon emoji-heart-eyes %}
+which looks like: {% icon bootstrap %}
 
 #### Advanced Usage
 
 ```liquid
-{% raw %}{% icon check-circle-fill | type: sprite | size: 64 | class: text-success | aria_hidden: true %}{% endraw %}
+{% raw %}{% icon rocket-takeoff-fill | type: sprite | size: 40 | class: text-primary | hidden: true %}{% endraw %}
 ```
 
 which will produce:
 
 ```xml
-{% icon check-circle-fill | type: sprite | size: 64 | class: text-success | aria_hidden: true %}
+{% icon rocket-takeoff-fill | type: sprite | size: 40 | class: text-primary | hidden: true %}
 ```
 
-which looks like: {% icon check-circle-fill | type: sprite | size: 64 | class: text-success | aria_hidden: true %}
+which looks like: {% icon rocket-takeoff-fill | type: sprite | size: 40 | class: text-primary | hidden: true %}
 
 #### Options
 
 <div class="table-responsive mb-5" markdown="1">
 
-| Name          | Description                                                                       | Deafult | Required? |
-|---------------|-----------------------------------------------------------------------------------|---------|-----------|
-| `name`        | The name of the icon (e.g. `bootstrap-fill`).                                     | `nil`   | Yes       |
-| `type`        | The type of icon. Available values are `font`, `image`, `sprite`, and `embedded`. | `font`  | No        |
-| `size`        | The width and height of the icon in pixels.                                       | `16`    | No        |
-| `class`       | Any additional class attribute values to be applied (e.g. `fs-3 text-info`).      | `nil`   | No        |
-| `aria_hidden` | For purely decorative icons, adds the `aria-hidden="true"` attribute.             | `false` | No        |
+| Name     | Description                                                                       | Deafult | Required? |
+|----------|-----------------------------------------------------------------------------------|---------|-----------|
+| `name`   | The name of the icon (e.g. `bootstrap-fill`).                                     | `nil`   | Yes       |
+| `type`   | The type of icon. Available values are `font`, `image`, `sprite`, and `embedded`. | `font`  | No        |
+| `size`   | The width and height of the icon in pixels.                                       | `16`    | No        |
+| `class`  | Any additional class attribute values to be applied (e.g. `fs-3 text-info`).      | `nil`   | No        |
+| `hidden` | Adds the `aria-hidden` attribute for purely decorative icons.                     | `false` | No        |
 
 </div>
 
