@@ -1,6 +1,6 @@
 # Paraqeet
 
-Paraqeet is a [Jekyll](https://jekyllrb.com/) theme for building websites using [Bootstrap](https://getbootstrap.com/) - the most popular HTML, CSS, and JS library in the world. Paraqeet comes pre-loaded with the latest versions of Bootstrap and [Bootstrap Icons](https://icons.getbootstrap.com/), as well as built-in CSS theme support for [Rouge](http://rouge.jneen.net/) - Jekyll's default code syntax highlighter.
+Paraqeet is a Jekyll theme for building websites using Bootstrap - the most popular HTML, CSS, and JS library in the world. Paraqeet comes pre-loaded with the latest versions of Bootstrap and Bootstrap Icons - the official open source SVG icon library for Bootstrap, as well as built-in Sass support for Rouge - Jekyll’s default code syntax highlighter.
 
 ## Installation and Usage
 
