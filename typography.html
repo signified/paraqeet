@@ -3,144 +3,152 @@ title: Typography
 layout: default
 ---
 
-<main class="prose container my-5">
-  <p><a href="{{- '/' | relative_url -}}">{% include icon.html name='arrow-left' %} Back</a></p>
-  <h1>{{ page.title }}</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sagittis magna, non volutpat quam pharetra vel. Sed sapien elit, dignissim a varius sit amet, congue eget augue. Fusce dictum interdum erat vel rhoncus. Sed euismod, orci vel commodo aliquet, eros neque pulvinar justo, non varius lacus ex ut metus. Aliquam ultrices nulla ac nunc pretium, vel lacinia tortor pulvinar. Etiam pulvinar nibh molestie leo hendrerit pretium.</p>
-  <p>Vivamus vulputate turpis sed eros dictum dictum. Donec suscipit vehicula ligula, at ultricies est egestas vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent imperdiet iaculis commodo. Quisque nec facilisis lectus, eu condimentum augue. Fusce vel lorem vehicula, vestibulum magna eu, malesuada urna. Pellentesque suscipit ligula quis ipsum tincidunt tempor.</p>
-  <hr>
-  <h2>Headings</h2>
-  <h3>Proin convallis a magna aliquet facilisis</h3>
-  <h4>In finibus laoreet luctus</h4>
-  <h5>Proin tempus turpis ac lectus maximus ac tempor ante accumsan</h5>
-  <h6>Vestibulum dictum tincidunt commodo</h6>
-  <p>Vestibulum vel enim ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae ultricies magna. Praesent commodo imperdiet nunc, ut dapibus erat eleifend sit amet. Pellentesque in odio dignissim, fermentum nunc nec, tristique nisl. Nullam eu molestie magna, sit amet tincidunt nunc. Sed turpis purus, efficitur sit amet orci a, aliquam lacinia quam. Sed vestibulum accumsan tortor.</p>
-  <hr>
-  <h2>Inline text elements</h2>
-  <p>
-    You can use the <code>&lt;mark&gt;</code> tag to <mark>highlight</mark> text.
-    The <code>&lt;del&gt;</code> tag is used for text that is meant to be treated as <del>deleted</del>.
-    Use the <code>&lt;sgt;</code> tag if the text is <s>no longer accurate</s>.
-    The <code>&lt;insgt;</code> tag is for text that is meant to be treated as <ins>an addition to the document</ins>.
-    <u>This text will render as underlined</u>.
-    <small>This text is meant to be treated as fine print.</small>
-    <strong>This text is rendered as bold.</strong>
-    <em>This text is rendered as italicized.</em>
-    <abbr title="attribute">attr</abbr> is an abbreviation for "attribute".
-    <abbr title="HyperText Markup Language" class="initialism">HTML</abbr> no longer supports the <code>&lt;acronym&gt;</code> tag.
-  </p>
-  <hr>
-  <h2>Code blocks</h2>
-  <pre>const myModal = document.querySelector('#myModal')
+<header class="py-4 py-md-5">
+  <div class="container">
+    <p><a href="{{- '/' | relative_url -}}">{% icon arrow-left %} Back</a></p>
+  </div>
+</header>
+<main class="py-4 py-md-5">
+  <article class="container prose col-12 col-md-10 col-lg-8 col-xxl-6">
+    <h1>{{ page.title }}</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquam sagittis magna, non volutpat quam pharetra vel. Sed sapien elit, dignissim a varius sit amet, congue eget augue. Fusce dictum interdum erat vel rhoncus. Sed euismod, orci vel commodo aliquet, eros neque pulvinar justo, non varius lacus ex ut metus. Aliquam ultrices nulla ac nunc pretium, vel lacinia tortor pulvinar. Etiam pulvinar nibh molestie leo hendrerit pretium.</p>
+    <p>Vivamus vulputate turpis sed eros dictum dictum. Donec suscipit vehicula ligula, at ultricies est egestas vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent imperdiet iaculis commodo. Quisque nec facilisis lectus, eu condimentum augue. Fusce vel lorem vehicula, vestibulum magna eu, malesuada urna. Pellentesque suscipit ligula quis ipsum tincidunt tempor.</p>
+    <hr>
+    <h2>Headings</h2>
+    <h3>Proin convallis a magna aliquet facilisis</h3>
+    <h4>In finibus laoreet luctus</h4>
+    <h5>Proin tempus turpis ac lectus maximus ac tempor ante accumsan</h5>
+    <h6>Vestibulum dictum tincidunt commodo</h6>
+    <p>Vestibulum vel enim ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae ultricies magna. Praesent commodo imperdiet nunc, ut dapibus erat eleifend sit amet. Pellentesque in odio dignissim, fermentum nunc nec, tristique nisl. Nullam eu molestie magna, sit amet tincidunt nunc. Sed turpis purus, efficitur sit amet orci a, aliquam lacinia quam. Sed vestibulum accumsan tortor.</p>
+    <hr>
+    <h2>Inline text elements</h2>
+    <p>
+      You can use the <code>&lt;mark&gt;</code> tag to <mark>highlight</mark> text.
+      The <code>&lt;del&gt;</code> tag is used for text that is meant to be treated as <del>deleted</del>.
+      Use the <code>&lt;s&gt;</code> tag if the text is <s>no longer accurate</s>.
+      The <code>&lt;ins&gt;</code> tag is for text that is meant to be treated as <ins>an addition to the document</ins>.
+      <u>This text will render as underlined</u>.
+      <small>This text is meant to be treated as fine print.</small>
+      <strong>This text is rendered as bold.</strong>
+      <em>This text is rendered as italicized.</em>
+      <abbr title="attribute">attr</abbr> is an abbreviation for "attribute".
+      <abbr title="HyperText Markup Language" class="initialism">HTML</abbr> no longer supports the <code>&lt;acronym&gt;</code> tag.
+    </p>
+    <hr>
+    <h2>Code blocks</h2>
+    <pre>class Greeter
+  def initialize(name="World")
+    @name = name
+  end
 
-myModal.addEventListener('show.bs.modal', event => {
-  if (!data) {
-    return event.preventDefault() // stops modal from being shown
-  }
-})</pre>
-  <hr>
-  <h2>Blockquotes</h2>
-  <blockquote>
-    <p>Suspendisse tristique massa a dui convallis, vel posuere metus facilisis. Proin viverra leo auctor, pulvinar dui non, auctor magna. Sed vel ipsum in dolor rhoncus mollis in id ligula.</p>
-  </blockquote>
-  <hr>
-  <h2>Lists</h2>
-  <h3>Ordered lists</h3>
-  <ol>
-    <li>Quisque non risus ac mauris dictum rutrum.</li>
-    <li>Curabitur faucibus felis quis convallis accumsan.</li>
-    <li>Maecenas tincidunt.</li>
-    <li>Dui eget venenatis elementum.</li>
-    <li>Metus lectus suscipit augue:
-      <ul>
-        <li>In vulputate diam dolor eget urna.</li>
-        <li>Aenean nec nibh blandit.</li>
-        <li>Ullamcorper tortor ac.</li>
-      </ul>
-    </li>
-    <li>Fusce scelerisque urna id dui eleifend vestibulum.</li>
-  </ol>
-  <h3>Unordered lists</h3>
-  <ul>
-    <li>Quisque non risus ac mauris dictum rutrum.</li>
-    <li>Curabitur faucibus felis quis convallis accumsan.</li>
-    <li>Maecenas tincidunt.</li>
-    <li>Dui eget venenatis elementum.</li>
-    <li>Metus lectus suscipit augue:
-      <ul>
-        <li>In vulputate diam dolor eget urna.</li>
-        <li>Aenean nec nibh blandit.</li>
-        <li>Ullamcorper tortor ac.</li>
-      </ul>
-    </li>
-    <li>Fusce scelerisque urna id dui eleifend vestibulum.</li>
-  </ul>
-  <h3>Description lists</h3>
-  <dl>
-    <dt>Description lists</dt>
-    <dd>A description list is perfect for defining terms.</dd>
-    <dt>Term</dt>
-    <dd>
-      <p>Description of the term.</p>
-      <p>And some more placeholder description text.</p>
-    </dd>
-    <dt>Another term</dt>
-    <dd>This description is short, so no extra paragraphs or anything.</dd>
-    <dt>Truncated term is truncated</dt>
-    <dd>This can be useful when space is tight. Adds an ellipsis at the end.</dd>
-    <dt>Nesting</dt>
-    <dd>
-      <dl>
-        <dt>Nested description list</dt>
-        <dd>I heard you like description lists. Let me put a description list inside your description list.</dd>
-      </dl>
-    </dd>
-  </dl>
-  <hr>
-  <h2>Images</h2>
-  <img alt="Surfboard Fence. Photo by tatonomusic on Unsplash" src="https://images.unsplash.com/photo-1586996292898-71f4036c4e07?w=800&q=80">
-  <hr>
-  <h2>Figures</h2>
-  <figure>
+  def say_hi
+    puts "Hi #{@name}!"
+  end
+end</pre>
+    <hr>
+    <h2>Blockquotes</h2>
+    <blockquote>
+      <p>Suspendisse tristique massa a dui convallis, vel posuere metus facilisis. Proin viverra leo auctor, pulvinar dui non, auctor magna. Sed vel ipsum in dolor rhoncus mollis in id ligula.</p>
+    </blockquote>
+    <hr>
+    <h2>Lists</h2>
+    <h3>Ordered lists</h3>
+    <ol>
+      <li>Quisque non risus ac mauris dictum rutrum.</li>
+      <li>Curabitur faucibus felis quis convallis accumsan.</li>
+      <li>Maecenas tincidunt.</li>
+      <li>Dui eget venenatis elementum.</li>
+      <li>Metus lectus suscipit augue:
+        <ul>
+          <li>In vulputate diam dolor eget urna.</li>
+          <li>Aenean nec nibh blandit.</li>
+          <li>Ullamcorper tortor ac.</li>
+        </ul>
+      </li>
+      <li>Fusce scelerisque urna id dui eleifend vestibulum.</li>
+    </ol>
+    <h3>Unordered lists</h3>
+    <ul>
+      <li>Quisque non risus ac mauris dictum rutrum.</li>
+      <li>Curabitur faucibus felis quis convallis accumsan.</li>
+      <li>Maecenas tincidunt.</li>
+      <li>Dui eget venenatis elementum.</li>
+      <li>Metus lectus suscipit augue:
+        <ul>
+          <li>In vulputate diam dolor eget urna.</li>
+          <li>Aenean nec nibh blandit.</li>
+          <li>Ullamcorper tortor ac.</li>
+        </ul>
+      </li>
+      <li>Fusce scelerisque urna id dui eleifend vestibulum.</li>
+    </ul>
+    <h3>Description lists</h3>
+    <dl>
+      <dt>Description lists</dt>
+      <dd>A description list is perfect for defining terms.</dd>
+      <dt>Term</dt>
+      <dd>
+        <p>Description of the term.</p>
+        <p>And some more placeholder description text.</p>
+      </dd>
+      <dt>Another term</dt>
+      <dd>This description is short, so no extra paragraphs or anything.</dd>
+      <dt>Truncated term is truncated</dt>
+      <dd>This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+      <dt>Nesting</dt>
+      <dd>
+        <dl>
+          <dt>Nested description list</dt>
+          <dd>I heard you like description lists. Let me put a description list inside your description list.</dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    <h2>Images</h2>
     <img alt="Surfboard Fence. Photo by tatonomusic on Unsplash" src="https://images.unsplash.com/photo-1586996292898-71f4036c4e07?w=800&q=80">
-    <figcaption>Surfboard Fence. Photo by <a href="https://unsplash.com/ja/@tatonomusic" target="_blank">tatonomusic</a> on <a href="https://unsplash.com/s/photos/surf" target="_blank">Unsplash</a>.</figcaption>
-  </figure>
-  <hr>
-  <h2>Tables</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Wrestler</th>
-        <th>Origin</th>
-        <th>Finisher</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Bret "The Hitman" Hart</td>
-        <td>Calgary, AB</td>
-        <td>Sharpshooter</td>
-      </tr>
-      <tr>
-        <td>Stone Cold Steve Austin</td>
-        <td>Austin, TX</td>
-        <td>Stone Cold Stunner</td>
-      </tr>
-      <tr>
-        <td>Randy Savage</td>
-        <td>Sarasota, FL</td>
-        <td>Elbow Drop</td>
-      </tr>
-      <tr>
-        <td>Vader</td>
-        <td>Boulder, CO</td>
-        <td>Vader Bomb</td>
-      </tr>
-      <tr>
-        <td>Razor Ramon</td>
-        <td>Chuluota, FL</td>
-        <td>Razor's Edge</td>
-      </tr>
-    </tbody>
-  </table>
+    <hr>
+    <h2>Figures</h2>
+    <figure>
+      <img alt="Surfboard Fence. Photo by tatonomusic on Unsplash" src="https://images.unsplash.com/photo-1586996292898-71f4036c4e07?w=800&q=80">
+      <figcaption>Surfboard Fence. Photo by <a href="https://unsplash.com/ja/@tatonomusic" target="_blank">tatonomusic</a> on <a href="https://unsplash.com/s/photos/surf" target="_blank">Unsplash</a>.</figcaption>
+    </figure>
+    <hr>
+    <h2>Tables</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Wrestler</th>
+          <th>Origin</th>
+          <th>Finisher</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bret "The Hitman" Hart</td>
+          <td>Calgary, AB</td>
+          <td>Sharpshooter</td>
+        </tr>
+        <tr>
+          <td>Stone Cold Steve Austin</td>
+          <td>Austin, TX</td>
+          <td>Stone Cold Stunner</td>
+        </tr>
+        <tr>
+          <td>Randy Savage</td>
+          <td>Sarasota, FL</td>
+          <td>Elbow Drop</td>
+        </tr>
+        <tr>
+          <td>Vader</td>
+          <td>Boulder, CO</td>
+          <td>Vader Bomb</td>
+        </tr>
+        <tr>
+          <td>Razor Ramon</td>
+          <td>Chuluota, FL</td>
+          <td>Razor's Edge</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
 </main>

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = "paraqeet"
-  spec.version = "1.1.0"
+  spec.version = "2.0.0"
   spec.author = "Robert Love"
   spec.email = "robertjohnlove@gmail.com"
 
@@ -13,9 +13,9 @@ Gem::Specification.new do |spec|
   spec.description = <<-EOF
     Paraqeet is a Jekyll theme for building websites using Bootstrap - the most
     popular HTML, CSS, and JS library in the world. Paraqeet comes pre-loaded
-    with the latest versions of Bootstrap and Bootstrap Icons, as well as
-    built-in CSS theme support for Rouge - Jekyll’s default code syntax
-    highlighter.
+    with the latest versions of Bootstrap and Bootstrap Icons - the official
+    open source SVG icon library for Bootstrap, as well as built-in Sass support
+    for Rouge - Jekyll’s default code syntax highlighter.
   EOF
 
   spec.metadata = {
@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
     "source_code_uri"   => "https://github.com/signified/paraqeet"
   }
 
-  spec.files = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i) }
+  spec.files = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_plugins|_sass|LICENSE|README|_config\.yml)!i) }
 
   spec.add_runtime_dependency "jekyll", "~> 4.2"
 end
