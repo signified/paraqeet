@@ -1,0 +1,38 @@
+{%- assign icon = nil -%}
+
+{%- assign name = include.name | downcase -%}
+{%- assign type = 'font' -%}
+{%- assign size = 16 -%}
+{%- assign class = 'bi bi-' | append: name -%}
+
+{%- assign title = name | replace: '-', ' ' | capitalize | escape -%}
+{%- assign path = '/assets/bootstrap-icons/' | relative_url -%}
+
+{%- if include.type -%}
+  {%- assign type = include.type | downcase -%}
+{%- endif -%}
+
+{%- if include.size -%}
+  {%- assign size = include.size -%}
+{%- endif -%}
+
+{%- if include.class -%}
+  {%- assign class = class | append: ' ' | append: include.class -%}
+{%- endif -%}
+
+{%- case type -%}
+  {%- when 'font' -%}
+    {%- capture icon -%}
+      <i aria-label="{{- title -}}" role="img" class="{{- class -}}"></i>
+    {%- endcapture -%}
+  {%- when 'image' -%}
+    {%- capture icon -%}
+      <img alt="{{- title -}}" role="img" class="{{- class -}}" width="{{- size -}}" height="{{- size -}}" src="{{- path -}}{{- name -}}.svg">
+    {%- endcapture -%}
+  {%- when 'sprite' -%}
+    {%- capture icon -%}
+      <svg aria-label="{{- title -}}" role="img" focusable="false" class="{{- class -}}" width="{{- size -}}" height="{{- size -}}" fill="currentColor"><use xlink:href="{{- path -}}bootstrap-icons.svg#{{- name -}}"/></svg>
+    {%- endcapture -%}
+{%- endcase -%}
+
+{{- icon -}}
