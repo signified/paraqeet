@@ -53,7 +53,7 @@
   }
 
   pre:not(.highlight pre) {
-    background: $light;
+    background: var(--bs-tertiary-bg);
     margin-bottom: 0 0 map-get($spacers, 4) 0;
     padding: $spacer;
     color: $pre-color;

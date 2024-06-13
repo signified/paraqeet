@@ -4,6 +4,7 @@ layout: home
 
 <header class="py-4 py-md-5 text-center text-md-start bg-dark text-light">
   <div class="container">
+    {% include theme-switcher.html class="float-end" %}
     <h1 class="display-1 mb-4">{{ site.title }}</h1>
     <p class="lead mb-4">{{ site.description }}</p>
     <a class="d-block d-md-inline mb-3 mb-md-0 btn btn-outline-light" href="https://getbootstrap.com/" target="_blank">{% include icon.html name='bootstrap' %} Bootstrap 5.3.3</a>
