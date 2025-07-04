@@ -52,11 +52,15 @@
     @include img-fluid();
   }
 
-  pre:not(.highlight pre) {
-    background: $light;
-    margin-bottom: 0 0 map-get($spacers, 4) 0;
+  // Code
+  pre {
+    margin: 0 0 map-get($spacers, 4) 0;
     padding: $spacer;
+    width: 100%;
+    background-color: $light;
     color: $pre-color;
+    border-radius: $border-radius;
+    font-size: $font-size-sm;
   }
 
   // Tables
@@ -102,4 +106,12 @@
     margin: map-get($spacers, 5) 0;
   }
 
+}
+
+[data-bs-theme="dark"] {
+  .prose {
+    pre {
+      background-color: $black;
+    }
+  }
 }

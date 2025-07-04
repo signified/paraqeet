@@ -1,55 +1,24 @@
-:root,
-[data-bs-theme="light"] {
-  --base00: #{$light};
-  --base01: #{$pre-color};
-  --base02: #{$text-muted};
-  --base03: #{$gray-400};
-  --base04: #{$blue-400};
-  --base05: #{$indigo-400};
-  --base06: #{$purple-400};
-  --base07: #{$pink-400};
-  --base08: #{$red-400};
-  --base09: #{$orange-400};
-  --base10: #{$yellow-100};
-  --base11: #{$green-400};
-}
-
-@include color-mode(dark, true) {
-  --base00: #{$black};
-}
-
 .highlight {
 
   & {
     width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: var(--base00);
-    border-radius: $border-radius;
   }
 
   * {
     font-size: $font-size-sm;
   }
 
-  pre {
-    margin: 0;
-    padding: $spacer;
-    color: var(--base01);
-  }
-
   td {
-
     pre {
+      margin: 0;
       padding: 0;
     }
-
   }
 
   .lineno {
     padding: 0 $spacer 0 0;
     text-align: right;
-    color: var(--base02);
+    color: $text-muted;
   }
 
   .o,
@@ -63,7 +32,7 @@
   .go,
   .ni,
   .w {
-    color: var(--base03);
+    color: $gray-400;
   }
 
   .gh,
@@ -79,21 +48,21 @@
   .vg,
   .vi,
   .vm {
-    color: var(--base04);
+    color: $blue-400;
   }
 
   .nd,
   .ow {
-    color: var(--base05);
+    color: $indigo-400;
   }
 
   .gu {
-    color: var(--base06);
+    color: $purple-400;
   }
 
   .si,
   .sr {
-    color: var(--base07);
+    color: $pink-400;
   }
 
   .gd,
@@ -110,16 +79,16 @@
   .s1,
   .no,
   .ne  {
-    color: var(--base08);
+    color: $red-400;
   }
 
   .cp,
   .se {
-    color: var(--base09);
+    color: $orange-400;
   }
 
   .hll {
-    background-color: var(--base10);
+    background-color: $yellow-100;
   }
 
   .c,
@@ -141,7 +110,7 @@
   .gi,
   .na,
   .nl {
-    color: var(--base11);
+    color: $green-400;
   }
 
   .k,
@@ -176,7 +145,7 @@
   }
 
   .err {
-    border: 1px solid var(--base08);
+    border: 1px solid $red-400;
   }
 
 }
