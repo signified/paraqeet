@@ -20,7 +20,7 @@
     }
 
     figcaption {
-      margin-top: -$blockquote-margin-y;
+      margin-top: $blockquote-margin-y;
       margin-bottom: $blockquote-margin-y;
       @include font-size($blockquote-footer-font-size);
       color: $blockquote-footer-color;
