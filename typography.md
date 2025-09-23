@@ -73,36 +73,57 @@ end
 
 ### Ordered lists
 
-1. Quisque non risus ac mauris dictum rutrum.
-1. Curabitur faucibus felis quis convallis accumsan.
-1. Maecenas tincidunt.
-    1. Dui eget venenatis elementum.
-    1. Metus lectus suscipit augue:
-    1. In vulputate diam dolor eget urna.
-1. Aenean nec nibh blandit.
-1. Ullamcorper tortor ac.
-1. Fusce scelerisque urna id dui eleifend vestibulum.
+1. Lorem ipsum dolor sit amet.
+1. Consectetur adipiscing elit.
+    1. Nam tempus posuere dui.
+    1. Eget dictum felis ultrices non.
+    1. Nunc vel eleifend velit.
+        1. Donec porta lorem sed nulla convallis.
+        1. Non blandit ex vehicula.
+            1. Integer orci lectus.
+            1. Varius volutpat ex quis.
+        1. Vehicula pellentesque mi.
+1. Duis vel varius mauris.
+1. Vivamus vel urna metus.
+    1. Cras ipsum lorem.
+        1. Volutpat sit amet gravida congue.
+1. Gravida eget est.
+    1. Vivamus leo nunc.
+1. Facilisis eget lobortis sed.
+1. Eleifend a ante.
 
 ### Unordered lists
 
-- Quisque non risus ac mauris dictum rutrum.
-- Curabitur faucibus felis quis convallis accumsan.
-- Maecenas tincidunt.
-    - Dui eget venenatis elementum.
-    - Metus lectus suscipit augue:
-    - In vulputate diam dolor eget urna.
-- Aenean nec nibh blandit.
-- Ullamcorper tortor ac.
-- Fusce scelerisque urna id dui eleifend vestibulum.
+- Lorem ipsum dolor sit amet.
+- Consectetur adipiscing elit.
+    - Nam tempus posuere dui.
+    - Eget dictum felis ultrices non.
+    - Nunc vel eleifend velit.
+        - Donec porta lorem sed nulla convallis.
+        - Non blandit ex vehicula.
+            - Integer orci lectus.
+            - Varius volutpat ex quis.
+        - Vehicula pellentesque mi.
+- Duis vel varius mauris.
+- Vivamus vel urna metus.
+    - Cras ipsum lorem.
+        - Volutpat sit amet gravida congue.
+- Gravida eget est.
+    - Vivamus leo nunc.
+- Facilisis eget lobortis sed.
+- Eleifend a ante.
 
 ### Description lists
 
 First Term
-: This is the definition of the first term.
+: This is the description of the first term.
 
 Second Term
-: This is one definition of the second term.
-: This is another definition of the second term.
+: This is one description of the second term.
+: This is another description of the second term.
+
+Third Term
+: This is the description of the third term.
 
 ---
 

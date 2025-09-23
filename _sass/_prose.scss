@@ -1,89 +1,112 @@
 .prose {
 
-  // Abbreviations
+  // abbr
   abbr {
-    @include font-size($initialism-font-size);
-    text-transform: uppercase;
+    @extend .initialism;
   }
 
-  // Blockquotes
+  // blockquote
   blockquote {
-    border-left: map-get($border-widths, 4) $border-style $border-color;
-    padding-left: $spacer;
-    font-style: italic;
+    @extend .blockquote;
+  }
 
-    margin-bottom: $blockquote-margin-y;
-    @include font-size($blockquote-font-size);
-
-    > :last-child {
-      margin-bottom: 0;
-    }
-
+  // figure
+  figure:not(.highlight figure) {
+    @extend .figure;
     figcaption {
-      margin-top: $blockquote-margin-y;
-      margin-bottom: $blockquote-margin-y;
-      @include font-size($blockquote-footer-font-size);
-      color: $blockquote-footer-color;
+      @extend .figure-caption;
+    }
+    blockquote {
+      + figcaption {
+        @extend .blockquote-footer;
+      }
+    }
+    img {
+      @extend .figure-img;
+    }
+  }
 
-      &::before {
-        content: "\2014\00A0";
+  // h1 - h6
+  h1 {
+    @extend .mb-5;
+  }
+  h2 {
+    @extend .mb-4;
+  }
+  h3 {
+    @extend .mb-4;
+  }
+  h4 {
+    @extend .mb-3;
+  }
+  h5 {
+    @extend .mb-3;
+  }
+  h6 {
+    @extend .mb-2;
+  }
+
+  // hr
+  hr {
+    @extend .mt-5;
+    @extend .mb-5;
+  }
+
+  // img
+  img {
+    @extend .img-fluid;
+  }
+
+  // ol
+  ol {
+    list-style-type: decimal;
+    ol {
+      list-style-type: lower-alpha;
+      ol {
+        list-style-type: lower-roman;
+        ol {
+          list-style-type: decimal;
+          ol {
+            list-style-type: lower-alpha;
+            ol {
+              list-style-type: lower-roman;
+            }
+          }
+        }
       }
     }
   }
 
-  // Figures
-  figure {
-    display: inline-block;
-
-    figcaption {
-      @include font-size($figure-caption-font-size);
-      color: $figure-caption-color;
-    }
-
-    img {
-      margin-bottom: $spacer * .5;
-      line-height: 1;
-      @include img-fluid();
-    }
-  }
-
-  // Images
-  img {
-    @include img-fluid();
-  }
-
-  // Code
+  // pre
   pre {
-    margin: 0 0 map-get($spacers, 4) 0;
-    padding: $spacer;
-    width: 100%;
-    background-color: $light;
-    color: $pre-color;
-    border-radius: $border-radius;
-    font-size: $font-size-sm;
+    @extend .w-100;
+    @extend .bg-light;
+    @extend .p-3;
+    @extend .rounded;
   }
 
-  // Tables
+  // table
   table:not(.highlight table) {
-    width: 100%;
-    margin-bottom: map-get($spacers, 4);
-    color: var(--#{$prefix}table-color);
-    vertical-align: $table-cell-vertical-align;
-    border-color: var(--#{$prefix}table-border-color);
+    @extend .table;
+  }
 
-    > :not(caption) > * > * {
-      padding: $table-cell-padding-y $table-cell-padding-x;
-      background-color: var(--#{$prefix}table-bg);
-      border-bottom-width: $table-border-width;
-      box-shadow: inset 0 0 0 9999px var(--#{$prefix}table-accent-bg);
-    }
-
-    > tbody {
-      vertical-align: inherit;
-    }
-
-    > thead {
-      vertical-align: bottom;
+  // ol
+  ul {
+    list-style-type: disc;
+    ul {
+      list-style-type: circle;
+      ul {
+        list-style-type: square;
+        ul {
+          list-style-type: disc;
+          ul {
+            list-style-type: circle;
+            ul {
+              list-style-type: square;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -91,19 +114,14 @@
   .highlight,
   address,
   dl,
+  figure:not(.highlight figure),
   form,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
   ol:not(li ol),
+  p,
+  pre,
+  table:not(.highlight table),
   ul:not(li ul) {
-    margin-bottom: map-get($spacers, 4);
-  }
-
-  hr {
-    margin: map-get($spacers, 5) 0;
+    @extend .mb-4;
   }
 
 }
@@ -111,7 +129,7 @@
 [data-bs-theme="dark"] {
   .prose {
     pre {
-      background-color: $black;
+      @extend .bg-black;
     }
   }
 }

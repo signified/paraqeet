@@ -1,8 +1,7 @@
 .highlight {
 
-  & {
-    width: 100%;
-  }
+  @extend .w-100;
+  @extend .p-0;
 
   * {
     font-size: $font-size-sm;
@@ -10,15 +9,15 @@
 
   td {
     pre {
-      margin: 0;
-      padding: 0;
+      @extend .m-0;
+      @extend .p-0;
     }
   }
 
   .lineno {
-    padding: 0 $spacer 0 0;
-    text-align: right;
-    color: $body-secondary-color;
+    @extend .pe-3;
+    @extend .text-end;
+    @extend .text-body-secondary;
   }
 
   .o,
@@ -130,7 +129,7 @@
   .ow,
   .se,
   .si {
-    font-weight: bold;
+    @extend .fw-bold;
   }
 
   .c,
@@ -141,7 +140,7 @@
   .cs,
   .ge,
   .sd {
-    font-style: italic;
+    @extend .fst-italic;
   }
 
   .err {
